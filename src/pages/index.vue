@@ -1,54 +1,88 @@
 <script setup lang="ts">
-const maisonsListe = 
-[
-    {
-        "adresse": "2821 Lake Sevilla, Palm Harbor, TX",
-        "collectionId": "sidpkt9hmbfwoeb",
-        "collectionName": "maison",
-        "created": "2023-05-01 14:00:54.598Z",
-        "favori": false,
-        "id": "64l3n8nar836i5j",
-        "image": "pexels_binyamin_mellish_106399_bnHdy6H03e.jpg",
-        "nbChambres": 4,
-        "nbSdb": 2,
-        "nomMaison": "Beverly Springfield",
-        "prix": 2700,
-        "surface": 45,
-        "updated": "2024-04-02 13:49:11.230Z"
-    },
-    {
-        "adresse": "2699 Green Valley, Highland Lake",
-        "collectionId": "sidpkt9hmbfwoeb",
-        "collectionName": "maison",
-        "created": "2024-04-02 13:48:47.643Z",
-        "favori": true,
-        "id": "lo831zeg10hpm9y",
-        "image": "pexels_binyamin_mellish_106399_YpoLMcQJsi.png",
-        "nbChambres": 4,
-        "nbSdb": 2,
-        "nomMaison": "Palm Harbor",
-        "prix": 2095,
-        "surface": 42,
-        "updated": "2024-04-02 13:48:47.643Z"
-    },
-    {
-        "adresse": "909 Woodland St, Michigan, IN",
-        "collectionId": "sidpkt9hmbfwoeb",
-        "collectionName": "maison",
-        "created": "2024-04-02 13:52:17.823Z",
-        "favori": false,
-        "id": "s1zuhj19x8eb242",
-        "image": "faulkner_ave_ZHz3nhmJzC.png",
-        "nbChambres": 4,
-        "nbSdb": 3,
-        "nomMaison": "Faulkner Ave",
-        "prix": 4550,
-        "surface": 80,
-        "updated": "2024-04-02 13:52:17.823Z"
-    }
+import type { MaisonRecord } from '@/pocketbase-types';
+import MaisonCard from '@/components/MaisonCard.vue'; 
+
+const maisonsListe:MaisonRecord = [
+  {
+    Prix: 50000,
+    adresse: '3a rue des passes ',
+    collectionId: 'kxykh1kotrburk7',
+    collectionName: 'Maison',
+    created: '2024-04-12 07:24:25.260Z',
+    favori: true,
+    id: 'jjzo7n2lr08ovth',
+    image: '',
+    nbChambres: 5,
+    nbSdb: 2,
+    nomMaison: 'La goat',
+    surface: 50,
+    updated: '2024-05-02 06:37:33.345Z'
+  },
+  {
+    Prix: 25000,
+    adresse: '5 rue de la jardinerie',
+    collectionId: 'kxykh1kotrburk7',
+    collectionName: 'Maison',
+    created: '2024-05-02 06:34:31.689Z',
+    favori: false,
+    id: 'tjbqaz69yvs9gvl',
+    image: '',
+    nbChambres: 4,
+    nbSdb: 4,
+    nomMaison: 'La plaza',
+    surface: 120,
+    updated: '2024-05-02 07:40:38.170Z'
+  },
+  {
+    Prix: 15000,
+    adresse: '2 rue des foppeurs',
+    collectionId: 'kxykh1kotrburk7',
+    collectionName: 'Maison',
+    created: '2024-05-02 06:35:48.741Z',
+    favori: false,
+    id: 'eyx9a2y0bjr1l46',
+    image: '',
+    nbChambres: 1,
+    nbSdb: 4,
+    nomMaison: 'Flop',
+    surface: 9,
+    updated: '2024-05-02 07:39:29.430Z'
+  },
+  {
+    Prix: 800000,
+    adresse: '3 rue des kalogoat',
+    collectionId: 'kxykh1kotrburk7',
+    collectionName: 'Maison',
+    created: '2024-05-02 06:36:38.474Z',
+    favori: false,
+    id: 'qu2wrx2epe84n34',
+    image: '',
+    nbChambres: 7,
+    nbSdb: 4,
+    nomMaison: 'Kalohouse',
+    surface: 134,
+    updated: '2024-05-02 07:38:50.420Z'
+  },
+  {
+    Prix: 70000,
+    adresse: '7 rue de bibi',
+    collectionId: 'kxykh1kotrburk7',
+    collectionName: 'Maison',
+    created: '2024-05-02 06:37:15.418Z',
+    favori: false,
+    id: 'fpf224p0o98nbt3',
+    image: 'capture_d_cran_2023_09_21_084329_mHULP9fzSB.png',
+    nbChambres: 2,
+    nbSdb: 5,
+    nomMaison: 'Bibihouse',
+    surface: 110,
+    updated: '2024-05-06 15:17:11.231Z'
+  }
 ]
 </script>
 
 <template>
   <h1 class="text-2xl">Bonjour monde !</h1>
+  <MaisonCard v-for="maison in maisonsListe" v-bind="maison" />
+    <!-- <MaisonCard v-bind="maisonsListe[0]" /> -->
 </template>
