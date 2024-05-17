@@ -3,9 +3,7 @@ import type { MaisonRecord } from '@/pocketbase-types'
 import MaisonCard from '@/components/MaisonCard.vue'
 import { pb } from '@/backend';
 
-const maisonsListe  = await pb.collection('Maison').getFullList(
-  { filter: "favori=true", } 
-)
+const maisonsListe  = await pb.collection('Maison').getFullList( )
 
 </script>
 
