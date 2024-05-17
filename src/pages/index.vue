@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import type { MaisonRecord } from '@/pocketbase-types';
-import MaisonCard from '@/components/MaisonCard.vue'; 
+import type { MaisonRecord } from '@/pocketbase-types'
+import MaisonCard from '@/components/MaisonCard.vue'
+import { pb } from '@/backend';
 
-const maisonsListe:MaisonRecord = [
+const maisonsListe  = await pb.collection('Maison').getFullList()
+
+/* : MaisonRecord = [
   {
     Prix: 50000,
     adresse: '3a rue des passes ',
@@ -78,11 +81,11 @@ const maisonsListe:MaisonRecord = [
     surface: 110,
     updated: '2024-05-06 15:17:11.231Z'
   }
-]
+] */
 </script>
 
 <template>
   <h1 class="text-2xl">Bonjour monde !</h1>
   <MaisonCard v-for="maison in maisonsListe" v-bind="maison" />
-    <!-- <MaisonCard v-bind="maisonsListe[0]" /> -->
+  <!-- <MaisonCard v-bind="maisonsListe[0]" /> -->
 </template>
