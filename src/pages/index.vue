@@ -7,6 +7,7 @@ const maisonsListe  = await pb.collection('Maison').getFullList()
 
 /* : MaisonRecord = [
   {
+    
     Prix: 50000,
     adresse: '3a rue des passes ',
     collectionId: 'kxykh1kotrburk7',
@@ -86,6 +87,6 @@ const maisonsListe  = await pb.collection('Maison').getFullList()
 
 <template>
   <h1 class="text-2xl">Bonjour monde !</h1>
-  <MaisonCard v-for="maison in maisonsListe" v-bind="maison" />
+  <MaisonCard v-for="uneMaison in maisonsListe" v-bind="uneMaison" />
   <!-- <MaisonCard v-bind="maisonsListe[0]" /> -->
 </template>

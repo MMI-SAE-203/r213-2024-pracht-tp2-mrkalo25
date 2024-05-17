@@ -9,12 +9,9 @@ const props = defineProps<MaisonResponse<any>>()
     class="flex flex-col justify-start items-start flex-grow relative rounded-lg bg-white border-[1.5px] border-indigo-100"
   >
     <div class="self-stretch flex-grow-0 flex-shrink-0 h-[200px]">
-      <div
-        class="w-[394.67px] h-[200px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-lg rounded-tr-lg bg-gray-500"
-      ></div>
       <ImgPb
         :record="props"
-        :filename="image"
+        :filename="images"
         class="w-[394.67px] h-[235px] absolute left-[-0.5px] top-[-24.5px] object-cover"
       />
     </div>

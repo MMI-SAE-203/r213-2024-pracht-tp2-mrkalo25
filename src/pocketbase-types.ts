@@ -40,13 +40,14 @@ export type AgentRecord = {
 	Nom?: string
 	Numero_de_telephone?: number
 	Prenom?: string
+	agent?: RecordIdString
 }
 
 export type MaisonRecord = {
 	Prix?: number
 	adresse?: string
 	favori?: boolean
-	image?: string
+	images?: string
 	nbChambres?: number
 	nbSdb?: number
 	nomMaison?: string
