@@ -9,6 +9,20 @@ const maisonsListe  = await pb.collection('Maison').getFullList( )
 
 <template>
   <h1 class="text-2xl">Bonjour monde !</h1>
-  <MaisonCard v-for="uneMaison in maisonsListe" v-bind="uneMaison" />
+  <ul>
+  <li v-for="uneMaison of maisonsListe" :key="uneMaison.id">
+    <RouterLink
+      :to="{
+        name: '/offres/[id]',
+        params: {
+          id: uneMaison.id
+        }
+      }"
+      class="text-red-400 hover:text-red-600"
+    >
+      {{ uneMaison.nomMaison }}
+    </RouterLink>
+  </li>
+</ul>
   <!-- <MaisonCard v-bind="maisonsListe[0]" /> -->
 </template>
